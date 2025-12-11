@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuôi Bo - Một người nuôi, cả nhà Bo vui</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .font-handwriting {
+            font-family: 'Indie Flower', cursive;
+        }
+        .font-serif {
+            font-family: 'Merriweather', serif;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+        .notification-enter {
+            animation: slideIn 0.5s ease-out;
+        }
+        .notification-exit {
+            animation: slideOut 0.5s ease-in;
+        }
+        .progress-bar {
+            transition: width 1s ease-in-out;
+        }
+        marquee {
+            color: #dc2626;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-orange-50 to-orange-100 text-gray-800">
+    
+    <!-- Fake Notification -->
+    <div id="notification-container" class="fixed top-20 right-4 z-50 space-y-2"></div>
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 shadow-lg sticky top-0 z-40">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="font-handwriting text-4xl md:text-5xl text-white font-bold transform -rotate-2">
+                Nuôi Bo 🐮
+            </div>
+            <nav class="hidden md:flex space-x-6 text-white font-semibold">
+                <a href="#profile" class="hover:text-orange-200 transition">Hồ Sơ</a>
+                <a href="#commitment" class="hover:text-orange-200 transition">Cam Kết</a>
+                <a href="#packages" class="hover:text-orange-200 transition">Gói Nhận Nuôi</a>
+                <a href="#donate" class="hover:text-orange-200 transition">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-16 text-center">
+        <h1 class="text-2xl md:text-3xl text-orange-600 font-handwriting mb-4">
+            "Một người nuôi - Cả nhà Bo vui"
+        </h1>
+        <div class="max-w-2xl mx-auto mb-8">
+            <div class="bg-gray-300 rounded-lg overflow-hidden shadow-xl mb-6 border-4 border-orange-400">
+                <img src="hungry.jfif" alt="Bo đang gục ngã vì đói" class="w-full h-auto object-cover">
+            </div>
+            <h2 class="text-3xl md:text-5xl font-bold text-orange-700 mb-6 leading-tight">
+                Hãy cứu lấy Bo khỏi cơn đói trà sữa chiều nay
+            </h2>
+            <button onclick="document.getElementById('donate').scrollIntoView({behavior: 'smooth'})" 
+                    class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg transform hover:scale-105 transition duration-300">
+                🚨 Nhận nuôi ngay 🚨
+            </button>
+        </div>
+    </section>
+
+    <!-- Thư Ngỏ Section -->
+    <section class="container mx-auto px-4 py-12 mb-12">
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-2xl p-8 md:p-12 border-t-8 border-orange-500">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-orange-700 mb-8 font-serif">
+                📜 THƯ NGỎ
+            </h2>
+            <div class="font-serif text-lg leading-relaxed text-gray-700 space-y-4">
+                <p class="font-bold text-xl text-center mb-6">
+                    Kính gửi Quý Mạnh Thường Quân, các Nhà Hảo Tâm và toàn thể "Hội người yêu cũ",
+                </p>
+                
+                <p class="text-justify">
+                    Giữa cái lạnh (hoặc cái nóng) khắc nghiệt của thời tiết, khi mọi người đang ấm êm bên nồi lẩu, thì ở một góc nhỏ nào đó, có một chàng trai tên <strong class="text-orange-600">Bo</strong> đang phải đối mặt với một thực trạng đau lòng: <strong>Cơn đói lúc 3h chiều và ví tiền trống rỗng.</strong>
+                </p>
+
+                <p class="text-justify">
+                    Dự án <strong class="text-orange-600">"Nuôi Bo"</strong> được khởi xướng không phải vì lợi nhuận (dĩ nhiên), mà vì sứ mệnh cao cả: <strong>Duy trì sự sống và nụ cười công nghiệp của Bo.</strong>
+                </p>
+
+                <p class="text-justify">
+                    Chúng tôi thấu hiểu rằng, quý vị luôn trăn trở về tính minh bạch. Vì vậy, Bo xin cam kết <strong class="text-red-600">3 KHÔNG:</strong>
+                </p>
+
+                <ol class="list-decimal list-inside space-y-2 ml-4 bg-orange-50 p-4 rounded-lg">
+                    <li><strong>KHÔNG sao kê:</strong> Vì số dư ít quá, in ra tốn giấy bảo vệ môi trường.</li>
+                    <li><strong>KHÔNG gửi tiết kiệm:</strong> Tiền vào là đi thẳng ra quán trà sữa/cơm tấm ngay lập tức.</li>
+                    <li><strong>KHÔNG trùng mã:</strong> Trên thế giới này chỉ có 1 Bo, không thể có chuyện bạn nuôi nhầm Bo khác được.</li>
+                </ol>
+
+                <p class="text-justify">
+                    Mỗi lượt chuyển khoản của quý vị, dù chỉ là <strong class="text-green-600">5.000đ</strong>, cũng góp phần giúp Bo có thêm 1 topping trân châu đường đen. <strong class="text-green-600">50.000đ</strong> là đủ để Bo có một bát phở full-topping, giúp tái tạo sức lao động để tiếp tục... ngồi lướt Facebook.
+                </p>
+
+                <p class="text-justify">
+                    Hãy dang rộng vòng tay (và mở rộng ví tiền) để cứu lấy "em Bo" ngay hôm nay.
+                    <em class="block mt-2 text-orange-600">Mọi sự đóng góp đều được ghi nhận bằng một nụ cười tỏa nắng và một icon trái tim to bự.</em>
+                </p>
+
+                <div class="text-right mt-8 pt-6 border-t-2 border-orange-200">
+                    <p class="italic">Trân trọng (và chờ tin nhắn "ting ting"),</p>
+                    <p class="font-handwriting text-3xl text-orange-600 mt-2">Bo</p>
+                    <p class="text-sm text-gray-500">Chủ tịch hội đồng quản trị cái dạ dày</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="container mx-auto px-4 py-12 mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-orange-700 mb-8">
+            📋 Hồ Sơ Hoàn Cảnh
+        </h2>
+        <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-2xl p-8 border-l-8 border-orange-500">
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="space-y-4">
+                    <div class="flex justify-between border-b pb-2">
+                        <span class="font-semibold">Tên:</span>
+                        <span class="text-orange-600 font-bold">Bo</span>
+                    </div>
+                    <div class="flex justify-between border-b pb-2">
+                        <span class="font-semibold">Mã số:</span>
+                        <span class="text-red-600 font-mono">BO-404-NOT-FOUND</span>
+                    </div>
+                    <div class="flex justify-between border-b pb-2">
+                        <span class="font-semibold">Tuổi:</span>
+                        <span>Tâm hồn 18, giao diện 21</span>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex justify-between border-b pb-2">
+                        <span class="font-semibold">Chiều cao:</span>
+                        <span>1m70 (khi mang giày độn)</span>
+                    </div>
+                    <div class="flex justify-between border-b pb-2">
+                        <span class="font-semibold">Tình trạng:</span>
+                        <span class="text-red-600">Đang thiếu cafein trầm trọng</span>
+                    </div>
+                    <div class="flex justify-between border-b pb-2">
+                        <span class="font-semibold">Ví tiền:</span>
+                        <span class="text-red-600 font-bold">🔥 Thủng đáy 🔥</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-orange-700 mb-4">📊 Chỉ Số Sinh Tồn</h3>
+            
+            <!-- Độ đói -->
+            <div class="mb-6">
+                <div class="flex justify-between mb-2">
+                    <span class="font-semibold">Độ đói:</span>
+                    <span class="text-red-600 font-bold">99%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-6 overflow-hidden">
+                    <div class="progress-bar bg-gradient-to-r from-red-500 to-red-700 h-6 rounded-full flex items-center justify-end pr-2" style="width: 99%">
+                        <span class="text-white text-xs font-bold">😭</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Độ lười -->
+            <div class="mb-6">
+                <div class="flex justify-between mb-2">
+                    <span class="font-semibold">Độ lười:</span>
+                    <span class="text-purple-600 font-bold">100% (Vượt chỉ tiêu)</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-6 overflow-hidden">
+                    <div class="progress-bar bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 h-6 rounded-full flex items-center justify-end pr-2" style="width: 100%">
+                        <span class="text-white text-xs font-bold">😴</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tiền mặt -->
+            <div class="mb-6">
+                <div class="flex justify-between mb-2">
+                    <span class="font-semibold">Tiền mặt:</span>
+                    <span class="text-gray-400 font-bold">0%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-6 overflow-hidden">
+                    <div class="progress-bar bg-gray-400 h-6 rounded-full" style="width: 0%"></div>
+                </div>
+                <p class="text-sm text-gray-500 mt-1 italic">*Trống trơn như tâm hồn mùa thi</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commitment Section -->
+    <section id="commitment" class="bg-gradient-to-r from-orange-200 to-orange-300 py-12 mb-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-orange-800 mb-12">
+                ✨ Cam Kết Minh Bạch ✨
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-lg shadow-xl p-6 text-center transform hover:scale-105 transition duration-300">
+                    <div class="text-6xl mb-4">🔍</div>
+                    <h3 class="text-xl font-bold text-orange-700 mb-3">Minh bạch tuyệt đối</h3>
+                    <p class="text-gray-700">
+                        Cam kết sao kê bằng file Excel... chạy bằng cơm. Sai số cho phép <strong>+/- 50%</strong> tùy tâm trạng.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-lg shadow-xl p-6 text-center transform hover:scale-105 transition duration-300">
+                    <div class="text-6xl mb-4">📱</div>
+                    <h3 class="text-xl font-bold text-orange-700 mb-3">Thông tin cập nhật</h3>
+                    <p class="text-gray-700">
+                        Cập nhật tình hình ăn chơi của Bo <strong>1 phút/lần</strong> (nếu có mạng). Không bao giờ có chuyện "trùng mã" vì chỉ có <strong>1 Bo duy nhất</strong>.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-lg shadow-xl p-6 text-center transform hover:scale-105 transition duration-300">
+                    <div class="text-6xl mb-4">💰</div>
+                    <h3 class="text-xl font-bold text-orange-700 mb-3">Sử dụng vốn</h3>
+                    <p class="text-gray-700">
+                        <strong>100%</strong> tiền donate sẽ đi thẳng vào dạ dày Bo. Không gửi tiết kiệm lấy lãi, chỉ gửi vào đồ ăn.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Packages -->
+    <section id="packages" class="container mx-auto px-4 py-12 mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-orange-700 mb-12">
+            💝 Các Gói Nhận Nuôi
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            
+            <!-- Package 1 -->
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition duration-300 border-t-4 border-blue-400">
+                <div class="bg-gradient-to-r from-blue-400 to-blue-500 text-white py-6 px-6 text-center">
+                    <div class="text-4xl mb-2">🧋</div>
+                    <h3 class="text-2xl font-bold">Trà Đá Vỉa Hè</h3>
+                    <p class="text-3xl font-bold mt-2">10k - 20k</p>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-lg mb-3 text-gray-700">Quyền lợi:</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>✓ Được Bo like status 1 lần</li>
+                        <li>✓ Cảm giác ấm lòng (tự suy nghĩ)</li>
+                        <li>✓ Nghiệp tốt +1 điểm</li>
+                    </ul>
+                    <button onclick="document.getElementById('donate').scrollIntoView({behavior: 'smooth'})" 
+                            class="w-full mt-6 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-lg transition">
+                        Chọn gói này
+                    </button>
+                </div>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-110 transition duration-300 border-t-4 border-green-500">
+                <div class="bg-gradient-to-r from-green-500 to-green-600 text-white py-6 px-6 text-center relative">
+                    <div class="absolute top-2 right-2 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-xs font-bold">
+                        PHỔ BIẾN
+                    </div>
+                    <div class="text-4xl mb-2">🍜</div>
+                    <h3 class="text-2xl font-bold">Bát Phở Thìn</h3>
+                    <p class="text-3xl font-bold mt-2">50k - 100k</p>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-lg mb-3 text-gray-700">Quyền lợi:</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>✓ Được Bo thả tim story</li>
+                        <li>✓ Nhận 1 ảnh selfie "cảm kích"</li>
+                        <li>✓ Được mention trong story (có thể)</li>
+                        <li>✓ Bo nhớ tên bạn trong 3 ngày</li>
+                    </ul>
+                    <button onclick="document.getElementById('donate').scrollIntoView({behavior: 'smooth'})" 
+                            class="w-full mt-6 bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-lg transition">
+                        Chọn gói này
+                    </button>
+                </div>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition duration-300 border-t-4 border-yellow-500">
+                <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white py-6 px-6 text-center">
+                    <div class="text-4xl mb-2">🦈</div>
+                    <h3 class="text-2xl font-bold">Cá Mập Cắn Cáp</h3>
+                    <p class="text-3xl font-bold mt-2">500k+</p>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-bold text-lg mb-3 text-gray-700">Quyền lợi:</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>✓ Tất cả quyền lợi gói trên</li>
+                        <li>✓ Tên bạn khắc trên bảng vàng ảo</li>
+                        <li>✓ Ghi danh vào lịch sử "Người nuôi Bo"</li>
+                        <li>✓ Bo sẽ inbox cảm ơn CHÂN THÀNH</li>
+                        <li>✓ VIP suốt đời (trong tâm trí Bo)</li>
+                    </ul>
+                    <button onclick="document.getElementById('donate').scrollIntoView({behavior: 'smooth'})" 
+                            class="w-full mt-6 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg transition">
+                        Chọn gói này
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section id="donate" class="bg-gradient-to-b from-orange-100 to-orange-200 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-bold text-center text-orange-700 mb-4">
+                🌱 Gieo mầm thiện tâm
+            </h2>
+            <p class="text-xl text-center text-orange-600 mb-8">
+                Nhưng xin hãy dừng lại... <span class="font-bold text-red-600 uppercase">Đừng chuyển cho Bo!</span>
+            </p>
+            
+            <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-12 border-8 border-orange-400 relative overflow-hidden">
+                
+                <div class="absolute top-0 right-0 -mr-12 -mt-12 w-40 h-40 overflow-hidden z-10">
+                    <div class="absolute top-[60px] right-0 bg-red-600 text-white text-xs font-bold py-2 w-[220px] text-center transform rotate-45 border-4 border-white shadow-lg">
+                        CHÍNH THỐNG
+                    </div>
+                </div>
+
+                <div class="text-center mb-8 space-y-4">
+                    <h3 class="text-2xl font-bold text-gray-800 font-serif">
+                        ⚠️ Chuyển khoản qua STK bên dưới
+                    </h3>
+                </div>
+                
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-xl mb-6 border-4 border-double border-red-300">
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <div class="w-64 h-64 border-2 border-gray-200 rounded-lg overflow-hidden flex items-center justify-center bg-white relative">
+                                <img src="QR.jfif" alt="QR Mặt Trận Tổ Quốc" class="w-full h-full object-contain z-10 relative">
+                                <div class="absolute inset-0 flex items-center justify-center text-center p-4 text-gray-400 text-sm z-0">
+                                    (Hãy thay ảnh QR Mặt Trận Tổ Quốc vào đây)
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-left space-y-3">
+                            <h4 class="font-bold text-xl text-red-700 border-b-2 border-red-200 pb-2">
+                                Mặt trận Tổ quốc Việt Nam
+                            </h4>
+                            <p class="text-gray-700"><strong>Ngân hàng:</strong> MBBank</p>
+                            <p class="text-gray-700"><strong>STK:</strong> 0606</p>
+                            <p class="text-gray-700"><strong>Chủ TK:</strong> Mat tran To quoc VN</p>
+                            <div class="bg-red-100 text-red-800 p-3 rounded-lg text-sm mt-2 font-semibold">
+                                "Sự đóng góp của bạn là ngọn lửa sưởi ấm những hoàn cảnh khó khăn thực sự."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center text-sm text-gray-500 italic mt-6">
+                    *Trang web này được lập ra bởi Bo. Toàn bộ nội dung phía trên là hư cấu nhằm mục đích giải trí và giáo dục. Phần STK của MTTQ là thật.*
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hall of Fame (Optional bonus section) -->
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-orange-700 mb-8">
+            🏆 Bảng Vàng Danh Dự
+        </h2>
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-8">
+            <div class="space-y-4">
+                <div class="flex items-center justify-between border-b pb-3">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-2xl">🥇</span>
+                        <span class="font-semibold">Bo</span>
+                    </div>
+                    <span class="text-green-600 font-bold">500.000đ</span>
+                </div>
+                <div class="flex items-center justify-between border-b pb-3">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-2xl">🥈</span>
+                        <span class="font-semibold">Chị Y Tốt Bụng</span>
+                    </div>
+                    <span class="text-green-600 font-bold">200.000đ</span>
+                </div>
+                <div class="flex items-center justify-between border-b pb-3">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-2xl">🥉</span>
+                        <span class="font-semibold">Em Z Dễ Thương</span>
+                    </div>
+                    <span class="text-green-600 font-bold">100.000đ</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-orange-600 to-orange-700 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg font-semibold mb-2">
+                Copyright © 2025 Dự án Nuôi Bo.
+            </p>
+            <p class="text-sm text-orange-200">
+                Trang web này phục vụ mục đích giải trí và xin tiền lẻ, không liên quan đến bất kỳ tổ chức nào.
+            </p>
+            <div class="mt-4 flex justify-center space-x-4 text-2xl">
+                <span>🐮</span>
+                <span>❤️</span>
+                <span>💰</span>
+                <span>😋</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Fake notification system
+        const donorNames = [
+            'Anh X', 'Chị Y', 'Em Z', 'Bác Hàng Xóm', 'Cô Giáo Cũ', 
+            'Anh Trai Họ', 'Chị Gái Họ', 'Người Yêu Cũ', 'Bạn Thân',
+            'Sếp Cũ', 'Đồng Nghiệp', 'Người Lạ Tốt Bụng', 'Fan Cuồng Bo'
+        ];
+        
+        const amounts = ['10k', '20k', '50k', '100k', '5k', '15k', '30k', '1 ly trà sữa', '1 bát phở'];
+        
+        function showNotification() {
+            const container = document.getElementById('notification-container');
+            const name = donorNames[Math.floor(Math.random() * donorNames.length)];
+            const amount = amounts[Math.floor(Math.random() * amounts.length)];
+            
+            const notification = document.createElement('div');
+            notification.className = 'notification-enter bg-green-500 text-white px-6 py-4 rounded-lg shadow-2xl max-w-sm';
+            notification.innerHTML = `
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">🎉</span>
+                    <div>
+                        <p class="font-bold">${name} vừa donate!</p>
+                        <p class="text-sm">Số tiền: ${amount}</p>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.remove('notification-enter');
+                notification.classList.add('notification-exit');
+                setTimeout(() => {
+                    container.removeChild(notification);
+                }, 500);
+            }, 4000);
+        }
+        
+        // Show notification every 8-15 seconds
+        setInterval(() => {
+            showNotification();
+        }, Math.random() * 7000 + 8000);
+        
+        // Show first notification after 3 seconds
+        setTimeout(showNotification, 3000);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Animate progress bars on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.progress-bar');
+                    progressBars.forEach(bar => {
+                        bar.style.width = bar.getAttribute('style').match(/width:\s*(\d+%)/)[1];
+                    });
+                }
+            });
+        }, observerOptions);
+
+        const profileSection = document.getElementById('profile');
+        if (profileSection) {
+            observer.observe(profileSection);
+        }
+    </script>
+</body>
+</html>
+``` 
